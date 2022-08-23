@@ -1,0 +1,131 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Rubik",sans-serif
+}
+
+body{
+    height: 100%;
+    background-color: whitesmoke;
+}
+
+.titre{
+    text-align: center;
+    padding:10px;
+    letter-spacing: 10px;
+
+}
+
+
+.container{
+    background-color: white;
+    text-align: center;
+    width: 400px;
+    padding: 50px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    box-shadow: 15px 30px 35px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    -webkit-perspective: 300px;
+    perspective: 300px;
+}
+
+.stats{
+    text-align: right;
+    color: #101020;
+    font-weight: 500;
+    line-height: 25px;
+}
+
+.coin{
+    height: 150px;
+    width: 150px;
+    position: relative;
+    margin: 50px auto;
+    -webkit-transform-style: preseve-3d;
+            transform-style: preserve-3d;
+}
+
+.coin img{
+    width: 145px;
+}
+
+.face,.pile{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+}
+
+.pile{
+    transform: rotateX(180deg);
+}
+
+@keyframes spin-face{
+    0%{
+        transform: rotateX(0);
+    }
+    100%{
+        transform: rotateX(1980deg);
+    }
+}
+
+@keyframes spin-pile{
+    0%{
+        transform: rotateX(0);
+    }
+    100%{
+        transform: rotateX(2160deg);
+    }
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
+button{
+    width: 120px;
+    padding: 10px 0;
+    border: 2.5 solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#flip-button{
+    background-color: white;;
+    transition: 0.5s ease;
+}
+
+#flip-button:disabled{
+    background-color: gray;
+    border-color: none;
+    color: white;
+}
+
+
+#flip-button:disabled:hover{
+    background-color: gray;
+}
+
+#reset-button{
+    background-color: white;
+    transition: 0.5s ease;
+}
+
+
+#flip-button:hover{
+    transition: 0.5s ease;
+    background-color: black;
+    color: white;
+}
+
+#reset-button:hover{
+    transition: 0.5s ease;
+    background-color: red;
+    color: white;
+}
